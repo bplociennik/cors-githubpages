@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Display Data</h2>
+
+<div id="data"></div>
+
+<script>
+fetch('https://cors.szurek.local/10/')
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('data').innerHTML = JSON.stringify(data, null, 2);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+</script>
+
+</body>
+</html>
